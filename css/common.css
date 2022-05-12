@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Ubuntu+Mono&display=swap');
+
+:root { 
+  --primary-font: 'Merriweather', serif;
+  --secondary-font: 'Ubunto Mono', monospace;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: var(--secondary-font);
+  position: relative;
+  color: #111;
+}
+
+body > .wrapper {
+  background-color: #eee;
+  width: 100%;
+  height: 100%;
+}
+
+body.dark {
+  filter: invert(90%);
+}
+
+body.full .chart {
+  width: 100%;
+  left: 0;
+}
+
+body.full .header,
+body.full .title {
+  width: calc(100% - 20px);
+}
+
+body.full .menu {
+  left: -350px;
+}
+
+.scroll {
+  overflow: auto;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background-color: #ddd;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+.header {
+  padding: 10px;
+  height: 52px;
+  width: calc(100% - 370px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #eee;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.header > * {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+body.no-chart .header > span {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+body.no-chart .header > span.refresh,
+body.no-chart .header > span.clear,
+body.no-chart .header > span.share,
+body.no-chart .header > span.theme,
+body.no-chart .header > span.set {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+body.no-queue .header .queue-controls {
+  display: none;
+}
+
+button {
+  min-width: 48px;
+  width: 48px;
+  height: 48px;
+  margin: 0 10px 0 0;
+  border-radius: 3px;
+  border-width: 0px;
+  font-weight: bold;
+  color: #111;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+button.columns,
+button.float-lines {
+  width: 40px;
+  font-size: 0.6em;
+}
+
+.share > button,
+.refresh > button,
+.clear > button,
+.lyrics > button,
+.theme > button,
+.set > button {
+  width: auto;
+  font-size: 0.6em;
+}
+
+label,
+span {
+  height: 48px;
+  line-height: 48px;
+  display: inline-block;
+}
+
+label {
+  margin: 0 5px 0 0;
+}
+
+.header > span {
+  padding: 0 0 0 10px;
+}
+
+.header > span > * {
+  float: left;
+}
+
+.header > span > label {
+  font-size: 10px;
+}
+
+.header > span > button:last-child {
+  margin: 0;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 350px;
+  user-select: none;
+}
+
+.menu .search {
+  position: relative;
+  height: 48px;
+  background-color: #fff;
+}
+
+.menu .search input {
+  width: 330px;
+  height: 40px;
+  padding: 4px 10px;
+  border: none;
+  font-family: var(--secondary-font);
+  font-size: 1.1em;
+  font-style: italic;
+  background-color: #f5f5f5;
+  color: #777;
+}
+
+.menu .search input:focus {
+  outline-width: 0;
+}
+
+.menu .search .clear-filter {
+  display: none;
+  position: absolute;
+  top: 6px;
+  right: 3px;
+  width: 36px;
+  height: 36px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.menu .search .clear-filter:after {
+  content: '\02A2F';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #333;
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+.menu .search .clear-filter.show {
+  display: block;
+}
+
+.collapse {
+  position: relative;
+  float: left;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li.active {
+  background-color: #ddd;
+}
+
+.drag-helper li {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  background-color: #ccc;
+}
+
+.drag-helper li span {
+  display: none;
+}
+
+/*
+.menu ul.list li > span {
+display: none;
+}
+ */
+
+.menu ul li > span {
+  float: right;
+  height: auto;
+  line-height: normal;
+  font-weight: bold;
+  width: 20px;
+  text-align: center;
+  font-size: 1.1em;
+  marin-right: 5px;
+  opacity: 0.5;
+}
+
+.menu ul li > span.move-up:hover,
+.menu ul li > span.move-down:hover {
+  opacity: 1;
+}
+
+.menu ul li.active > span {
+  display: inline-block;
+}
+
+.menu ul li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu ul li:not(.active):hover {
+  background-color: #e5e5e5;
+}
+
+/*
+.menu ul.queue {
+border-bottom: 5px solid #ccc;
+}
+ */
+
+.title {
+  position: absolute;
+  top: 62px;
+  right: 0;
+  height: 32px;
+  margin: 10px 10px 0;
+  width: calc(100% - 370px);
+}
+
+.chart {
+  position: absolute;
+  top: 114px;
+  left: 350px;
+  height: calc(100% - 114px);
+  width: calc(100% - 350px);
+}
+
+.chart .empty-chart {
+  margin: 0 10px;
+}
+
+.chart .empty-chart:before {
+  content: '\02190';
+  margin-right: 10px;
+}
+
+.column {
+  margin: 0;
+  padding: 0 10px 40px;
+  width: calc(50% - 30px);
+  float: left;
+}
+
+.chart.no-columns .column {
+  width: calc(100% - 30px);
+  padding: 0 10px;
+}
+
+.chart:not(.no-columns) .column ul:first-child li:first-child,
+.chart.no-columns .column:first-child ul:first-child li:first-child {
+  margin: 0;
+}
+
+
+.chart.no-columns .column:last-child {
+  margin: 0 0 20px;
+  padding: 0 10px 40px;
+}
+
+.chart ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+  overflow: visible;
+}
+
+.chart ul li.empty {
+  margin: 0;
+  height: 0;
+  width: 100%;
+}
+
+.chart ul li {
+  padding: 26px 0 0;
+  white-space: nowrap;
+  font-size: 0.8em;
+  color: #222;
+}
+
+.chart ul li:first-child {
+  width: 100%;
+  font-weight: bold;
+}
+
+.chart ul li .chord {
+  position: relative;
+  display: inline-block;
+  top: -22px;
+  width: 0px;
+  white-space: nowrap;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1.1em;
+  color: #000;
+}
+
+.chart.float-lines ul li {
+  float: left;
+  padding-right: 5%;
+}
+
+.lyrics-only .chart ul li {
+  margin: 0;
+  padding: 10px 0 0;
+}
+
+.lyrics-only .chart ul li.empty {
+  display: none;
+}
+
+.lyrics-only .chart ul li:first-child {
+  margin: 26px 0 0;
+}
+
+

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang=en>
+<head>
+<title>Chordcharts</title>
+<meta name="description" content="Free transposable worship chordcharts">
+<meta name="author" content="Eric Wegscheid">
+<link rel="icon" href="res/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="css/common.css">
+</head>
+<body class="no-chart no-queue">
+  <div class="wrapper">
+    <div class="menu scroll">
+      <ul class="queue"></ul>
+      <div class="search">
+        <div class="clear-filter" onclick="_action.clearFilter"></div>
+        <input placeholder="Search"/></div>
+      <ul class="list"></ul>
+    </div>
+    <div class="header scroll">
+      <button class="collapse" onclick="_action.collapse()">&lsaquo;</button>
+      <span class="queue-controls">
+        <button class="prev" onclick="_action.queueNav(-1)">&laquo;</button>
+        <button class="next" onclick="_action.queueNav(1)">&raquo;</button>
+      </span>
+      <span>
+        <label>Trans</label>
+        <button onclick="_action.transpose(-1)">-</button>
+        <button onclick="_action.transpose(1)">+</button>
+      </span>
+      <span>
+        <label>Zoom</label>
+        <button onclick="_action.zoom(-5)">-</button>
+        <button onclick="_action.zoom(5)">+</button>
+      </span>
+      <span>
+        <label>Columns</label>
+        <button class="columns" onclick="_action.columns()">ON</button>
+      </span>
+      <span>
+        <label>Float Lines</label>
+        <button class="float-lines" onclick="_action.floatLines()">OFF</button>
+      </span>
+      <span class="refresh">
+        <button onclick="_action.refresh()">REFRESH</button>
+      </span>
+      <span class="clear">
+        <button onclick="_action.clear()">CLEAR</button>
+      </span>
+      <span class="share">
+        <button onclick="_action.share()">SHARE</button>
+      </span>
+      <span class="lyrics">
+        <button onclick="_action.hideChords()">LYRICS</button>
+      </span>
+      <span class="theme">
+        <button onclick="_action.theme()">DARK</button>
+      </span>
+      <span class="set">
+        <button onclick="_action.loadCurrentSet()">SET</button>
+      </span>
+    </div>
+    <h2 class="title"></h2>
+    <div class="chart scroll"></div>
+  </div>
+</body>
+<!--
+<script src="js/ext/dragonfly.js"></script>
+-->
+<script src="data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/proc.js"></script>
+<script src="js/render.js"></script>
+<script src="js/action.js"></script>
+<script src="js/app.js"></script>
+</html>
