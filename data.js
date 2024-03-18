@@ -1,4 +1,5 @@
 window._data = {
+  "zoom": 40,
   "currentSet": [],
   "charts": [
     "./charts/Clearly.ccl",

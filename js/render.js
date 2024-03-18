@@ -57,7 +57,7 @@
             return '<li onclick="_action.selectChart(' + chart.index + ')" ' +
               'id="chart-' + chart.id + '">' +
               chart.title +
-              '<span onclick="_action.addToQueue(' + chart.index + ')">+</span>' +
+              '<div onclick="_action.addToQueue(' + chart.index + ')">+</div>' +
               '</li>';
           })
           .join('');
