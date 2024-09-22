@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Ubuntu+Mono&display=swap');
-
 :root { 
-  --primary-font: 'Merriweather', serif;
-  --secondary-font: 'Ubunto Mono', monospace;
+  --primary-font: serif;
+  --secondary-font: monospace;
   --primary-color: #0b49df;
   --secondary-color: #912e2e;
 }
@@ -37,7 +35,7 @@ body {
 
 body {
   margin: 0;
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
   position: relative;
   color: #111;
 }
