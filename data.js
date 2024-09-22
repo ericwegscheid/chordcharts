@@ -33,6 +33,7 @@ window._data = {
     "./charts/worship/ChristArose.ccl",
     "./charts/worship/ChristIsRisen.ccl",
     "./charts/worship/ChristmasBells.ccl",
+    "./charts/worship/ChristBeMagnified.ccl",
     "./charts/worship/ComeLikeTheDawn.ccl.arc",
     "./charts/worship/Completely.ccl.arc",
     "./charts/worship/Cornerstone.ccl",
