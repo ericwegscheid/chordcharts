@@ -112,7 +112,6 @@ window._data = {
     "./charts/worship/MyChainsAreGone.ccl",
     "./charts/worship/MyLighthouse.ccl",
     "./charts/worship/MyRedeemerLives.ccl",
-    "./charts/worship/MySaviorMyGod.ccl",
     "./charts/worship/NeverOnce.ccl",
     "./charts/worship/NewWine.ccl",
     "./charts/worship/NoLongerSlaves.ccl",

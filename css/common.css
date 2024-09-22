@@ -39,7 +39,7 @@ body.full .title {
 }
 
 body.full .menu {
-  left: -350px;
+  left: -400px;
 }
 
 body.hide-controls .header {
@@ -162,7 +162,7 @@ label {
   top: 72px;
   left: 0;
   height: 100%;
-  width: 350px;
+  width: 400px;
   user-select: none;
 }
 
@@ -172,7 +172,7 @@ label {
 }
 
 .menu .search input {
-  width: 330px;
+  width: 380px;
   height: 40px;
   padding: 4px 10px;
   border: none;
@@ -256,16 +256,16 @@ label {
   right: 0;
   height: 32px;
   margin: 10px 10px 0;
-  width: calc(100% - 370px);
+  width: calc(100% - 420px);
   text-wrap: nowrap;
 }
 
 .chart {
   position: absolute;
   top: 100px;
-  left: 350px;
+  left: 400px;
   height: calc(100% - 100px);
-  width: calc(100% - 350px);
+  width: calc(100% - 400px);
 }
 
 .chart .empty-chart {
