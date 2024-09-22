@@ -177,6 +177,11 @@
       chart.classList.toggle('float-lines', floatLines);
       __.select('button.float-lines').innerHTML = floatLines ? 'ON' : 'OFF';
     },
+    gap: function(direction) {
+      _data.gap += direction || 0;
+      _app.saveData('gap');
+      __.select('.column').style.marginRight = _data.gap + 'px';
+    },
     zoom: function(direction) {
       _data.zoom += direction || 0;
       _app.saveData('zoom');

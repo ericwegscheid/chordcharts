@@ -1,4 +1,5 @@
 window._data = {
+  "gap": 0,
   "zoom": 40,
   "currentSet": [],
   "charts": [
