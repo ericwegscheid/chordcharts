@@ -64,6 +64,28 @@ body.full .menu {
   left: -350px;
 }
 
+body.hide-controls .header {
+  top: -100px;
+  left: 0px;;
+}
+
+body.hide-controls .title {
+  top: 0px;
+  left: 0px;
+  width: 0px;
+}
+
+body.hide-controls .chart {
+  top: 50px;
+  height: calc(100% - 50px);
+}
+
+body.hide-controls .header .toggle-controls {
+  top: 20px;
+  right: 20px;
+  position: fixed;
+}
+
 .scroll {
   overflow: auto;
 }
@@ -85,13 +107,13 @@ body.full .menu {
 .header {
   padding: 10px;
   height: 52px;
-  width: 100%;
+  width: calc(100% - 10px);
   position: absolute;
   top: 0;
   left: 0;
   background-color: #eee;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow-x: visible;
+  overflow-y: visible;
   white-space: nowrap;
   user-select: none;
 }
@@ -121,7 +143,6 @@ body.no-queue .header .queue-controls {
 
 button {
   min-width: 48px;
-  width: 48px;
   height: 48px;
   margin: 0 10px 0 0;
   border-radius: 3px;
