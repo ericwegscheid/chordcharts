@@ -6,15 +6,16 @@
 <meta name="author" content="Eric Wegscheid">
 <link rel="icon" href="res/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/theme.css">
 </head>
 <body class="no-chart no-queue">
   <div class="wrapper">
-    <div class="menu scroll">
+    <div class="menu">
       <ul class="queue"></ul>
       <div class="search">
         <div class="clear-filter" onclick="_action.clearFilter"></div>
         <input placeholder="Search"/></div>
-      <ul class="list"></ul>
+      <ul class="list scroll"></ul>
     </div>
     <div class="header scroll">
       <button class="collapse" onclick="_action.collapse()">&lsaquo;</button>
@@ -47,24 +48,30 @@
         <label>Float Lines</label>
         <button class="float-lines" onclick="_action.floatLines()">OFF</button>
       </span>
+      <!-- DEV
+      -->
       <span class="refresh">
         <button onclick="_action.refresh()">REFRESH</button>
       </span>
       <span class="clear">
         <button onclick="_action.clear()">CLEAR</button>
       </span>
+      <!--
       <span class="share">
         <button onclick="_action.share()">SHARE</button>
       </span>
+      -->
       <span class="lyrics">
         <button onclick="_action.hideChords()">LYRICS</button>
       </span>
       <span class="theme">
         <button onclick="_action.theme()">DARK</button>
       </span>
+      <!--
       <span class="set">
         <button onclick="_action.loadCurrentSet()">SET</button>
       </span>
+      -->
       <span class="toggle-controls">
         <button onclick="_action.toggleControls()">TOGGLE</button>
       </span>
@@ -73,9 +80,6 @@
     <div class="chart scroll"></div>
   </div>
 </body>
-<!--
-<script src="js/ext/dragonfly.js"></script>
--->
 <script src="data.js"></script>
 <script src="js/common.js"></script>
 <script src="js/proc.js"></script>

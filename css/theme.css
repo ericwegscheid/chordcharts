@@ -1,0 +1,85 @@
+:root { 
+  --blue: #0b49df;
+  --red: #912e2e;
+
+  --fg-1: #111111;
+  --fg-2: #222222;
+
+  --bg-1: #e0e0e0;
+  --bg-2: #d8d8d8;
+  --bg-3: #d0d0d0;
+  --bg-4: #c8c8c8;
+  --bg-5: #c0c0c0;
+}
+
+* {
+    font-family: monospace !important;
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+body.dark {
+  filter: invert(95%);
+}
+
+body > .wrapper {
+  color: var(--fg-1);
+  background-color: var(--bg-2);
+}
+
+/** scroll bars **/
+.scroll::-webkit-scrollbar-corner,
+.scroll::-webkit-scrollbar-track,
+.scroll::-webkit-scrollbar {
+  background-color: var(--bg-2);
+}
+.scroll::-webkit-scrollbar-thumb {
+  background-color: var(--bg-4);
+}
+
+/** buttons **/
+button {
+  background-color: var(--bg-3);
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+/** menu **/
+.menu .search {
+  background-color: var(--bg-3);
+}
+.menu .search input {
+  color: var(--fg-2);
+  background-color: var(--bg-1);
+  font-style: italic;
+}
+.menu .search .clear-filter:after {
+  color: var(--fg-2);
+  font-weight: 500;
+}
+.menu ul li.active {
+  background-color: var(--bg-3);
+}
+.menu ul li > div {
+  font-size: x-large;
+  font-weight: 700;
+}
+.menu ul li > div:hover {
+  background-color: var(--bg-2);
+}
+.menu ul li:not(.active):hover {
+  background-color: var(--bg-3);
+}
+
+/** chart **/
+.chart ul li:first-child {
+  font-weight: 700;
+  font-style: italic;
+  color: var(--red);
+}
+.chart ul li .chord {
+  font-weight: 700;
+  font-style: normal;
+  color: var(--blue);
+}

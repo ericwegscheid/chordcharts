@@ -44,11 +44,11 @@
     },
     keydown: function(e) {
       // left, up
-      if( !!~[37, 38].indexOf(e.keyCode) ) {
+      if( [37, 38].includes(e.keyCode) ) {
           _action.queueNav(-1);
 
       // right, down
-      } else if( !!~[39, 40].indexOf(e.keyCode) ) {
+      } else if( [39, 40].includes(e.keyCode) ) {
           _action.queueNav(1);
       }
     },
@@ -79,11 +79,6 @@
       document.onkeydown = _app.keydown;
       __.select('.search').onkeyup = _action.filterMenu;
       __.select('.search').onclick = _action.clearFilter;
-
-      // TODO: add ability to re-order queue
-//       dragonfly('.queue', function () {
-//           console.log('This is a callback');
-//       });
 
       document.addEventListener('click', e => {
         if( e.target && e.target.getAttribute('data-event') === 'select-chart' ) {

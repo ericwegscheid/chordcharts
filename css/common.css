@@ -1,18 +1,3 @@
-:root { 
-  --primary-font: serif;
-  --secondary-font: monospace;
-  --primary-color: #0b49df;
-  --secondary-color: #912e2e;
-}
-
-* {
-    font-family: var(--secondary-font);
-    color: rgb(65,  65,  65);
-    -webkit-print-color-adjust: exact !important;
-    color-adjust: exact !important;
-    print-color-adjust: exact !important;
-}
-
 @media print {
     @page {
         margin-left:  0.8in;
@@ -25,29 +10,22 @@
     }
 }
 
-
 html,
 body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  font-size: 16px;
 }
 
 body {
   margin: 0;
-  font-family: var(--secondary-font);
   position: relative;
-  color: #111;
 }
 
 body > .wrapper {
-  background-color: #eee;
   width: 100%;
   height: 100%;
-}
-
-body.dark {
-  filter: invert(90%);
 }
 
 body.full .chart {
@@ -90,18 +68,9 @@ body.hide-controls .header .toggle-controls {
   overflow: auto;
 }
 
-.scroll::-webkit-scrollbar-track {
-  background-color: #ddd;
-}
-
 .scroll::-webkit-scrollbar {
   width: 10px;
   height: 10px;
-  background-color: #ddd;
-}
-
-.scroll::-webkit-scrollbar-thumb {
-  background-color: #ccc;
 }
 
 .header {
@@ -111,7 +80,6 @@ body.hide-controls .header .toggle-controls {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #eee;
   overflow-x: visible;
   overflow-y: visible;
   white-space: nowrap;
@@ -145,11 +113,7 @@ button {
   min-width: 48px;
   height: 48px;
   margin: 0 10px 0 0;
-  border-radius: 3px;
   border-width: 0px;
-  font-weight: bold;
-  color: #111;
-  background-color: #ccc;
   cursor: pointer;
 }
 
@@ -169,13 +133,16 @@ button.float-lines {
 
 label,
 span {
-  height: 48px;
-  line-height: 48px;
   display: inline-block;
 }
 
 label {
   margin: 0 5px 0 0;
+}
+
+.header label {
+  height: 48px;
+  line-height: 48px;
 }
 
 .header > span {
@@ -184,9 +151,6 @@ label {
 
 .header > span > * {
   float: left;
-}
-
-.header > span > label {
 }
 
 .header > span > button:last-child {
@@ -205,7 +169,6 @@ label {
 .menu .search {
   position: relative;
   height: 48px;
-  background-color: #fff;
 }
 
 .menu .search input {
@@ -213,10 +176,6 @@ label {
   height: 40px;
   padding: 4px 10px;
   border: none;
-  font-family: var(--primary-font);
-  font-style: italic;
-  background-color: #f5f5f5;
-  color: #777;
 }
 
 .menu .search input:focus {
@@ -241,14 +200,8 @@ label {
   left: 0;
   width: 100%;
   height: 100%;
-  color: #333;
   text-align: center;
-  font-weight: bold;
   line-height: 36px;
-}
-
-.menu .search .clear-filter.show {
-  display: block;
 }
 
 .collapse {
@@ -265,29 +218,8 @@ label {
   margin: 0;
 }
 
-.menu ul li.active {
-  background-color: #ddd;
-}
-
-.drag-helper li {
-  list-style: none;
-  padding: 10px;
-  margin: 0;
-  background-color: #ccc;
-}
-
-.drag-helper li span {
-  display: none;
-}
-
-/*
-.menu ul.list li > div {
-display: none;
-}
- */
-.menu ul.list li {
-  height: 20px;
-  position: relative;
+.menu ul.list {
+  height: calc(100% - 120px);
 }
 
 .menu ul li > div {
@@ -301,8 +233,6 @@ display: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: x-large;
-  font-weight: 700;
 }
 
 .menu ul li > div.move-up:hover,
@@ -310,27 +240,15 @@ display: none;
   opacity: 1;
 }
 
-.menu ul li.active > div {
-  background: #ccc;
-  color: #111;
-}
-
 .menu ul li {
   padding: 10px;
   cursor: pointer;
-  font-size: small;
   text-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  height: 20px;
+  position: relative;
 }
-
-.menu ul li:not(.active):hover {
-  background-color: #e5e5e5;
-}
-
-/*
-.menu ul.queue {
-border-bottom: 5px solid #ccc;
-}
- */
 
 .title {
   position: absolute;
@@ -346,7 +264,7 @@ border-bottom: 5px solid #ccc;
   position: absolute;
   top: 100px;
   left: 350px;
-  height: calc(100% - 114px);
+  height: calc(100% - 100px);
   width: calc(100% - 350px);
 }
 
@@ -376,7 +294,6 @@ border-bottom: 5px solid #ccc;
   padding: 0;
 }
 
-
 .chart.no-columns .column:last-child {
   margin: 0 0 20px;
   padding: 0 10px 40px;
@@ -397,28 +314,20 @@ border-bottom: 5px solid #ccc;
 }
 
 .chart ul li {
-  padding: 17px 0 0;
+  padding: 20px 0 0;
   white-space: nowrap;
-  letter-spacing: 1px;
-  color: #333;
 }
 
 .chart ul li:first-child {
   width: 100%;
-  font-weight: bold;
-  font-style: italic;
-  color: var(--secondary-color);
 }
 
 .chart ul li .chord {
   position: relative;
   display: inline-block;
-  top: -16px;
+  top: -17px;
   width: 0px;
   white-space: nowrap;
-  font-weight: 400;
-  font-style: normal;
-  color: var(--primary-color);
 }
 
 .chart.float-lines ul li {
@@ -438,5 +347,3 @@ border-bottom: 5px solid #ccc;
 .lyrics-only .chart ul li:first-child {
   margin: 26px 0 0;
 }
-
-

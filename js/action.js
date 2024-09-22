@@ -180,7 +180,9 @@
     gap: function(direction) {
       _data.gap += direction || 0;
       _app.saveData('gap');
-      __.select('.column').style.marginRight = _data.gap + 'px';
+      __.select('.column:not(:first-child)', true).forEach((el) => {
+        el.style.marginLeft = _data.gap + 'px';
+      });
     },
     zoom: function(direction) {
       _data.zoom += direction || 0;

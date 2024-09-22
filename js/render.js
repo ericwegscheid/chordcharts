@@ -36,7 +36,7 @@
             (isSelected ? ' class="active"' : '') +
             ' id="chart-' + chart.id + '">' +
             chart.title +
-            '<span onclick="_action.removeFromQueue(' + i + ')">-</span>' +
+            '<div onclick="_action.removeFromQueue(' + i + ')">-</div>' +
             '</li>';
         })
         .join('');
@@ -61,8 +61,9 @@
               '</li>';
           })
           .join('');
-
       _action.selectChart((_data.selectedChart || {}).index);
+      var listEl = __.select('.menu > ul.list');
+      listEl.style.height = `calc(100% - ${listEl.getBoundingClientRect().top}px)`;
     },
     _chords: function(line, hideChords) {
       return (line || '')
