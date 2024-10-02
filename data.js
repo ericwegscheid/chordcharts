@@ -6,6 +6,7 @@ window._data = {
     "./charts/Clearly.ccl",
     "./charts/Rain.ccl",
     "./charts/DustInTheWind.ccl",
+    "./charts/TheLetterG.ccl",
     "./charts/TheSoundOfSilence.ccl",
     "./charts/WhereHaveAllTheCowboysGone.ccl",
     "./charts/worship/10000Reasons.ccl",
