@@ -96,6 +96,7 @@
     for (var chart of _data.charts) {
       if (chart.id === queryParams.song) {
         _action.selectChart(chart.index);
+        _action.toggleControls();
       }
     }
   }
