@@ -101,4 +101,9 @@
     }
   }
 
+  const transposition = Number(queryParams.transpose)
+  if (!Number.isNaN(transposition)) {
+    _action.transpose(transposition, true);
+  }
+
 })();

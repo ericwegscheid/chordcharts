@@ -214,8 +214,12 @@
         // }
       // }
     },
-    transpose: function(direction) {
-      _data.selectedChart.transposition += direction;
+    transpose: function(direction, override) {
+      if (override) {
+        _data.selectedChart.transposition = direction
+      } else {
+        _data.selectedChart.transposition += direction
+      }
       _app.saveData('selectedChart');
       _proc.chart(_data.selectedChart);
       _render.chart(_data.selectedChart);

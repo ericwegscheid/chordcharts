@@ -103,7 +103,7 @@
     getQueryParams: function() {
       return JSON.parse('{' + location.search
         .slice(1)
-        .split(';')
+        .split('&')
         .map(function(param, i) {
           var split = param.split('=');
 
