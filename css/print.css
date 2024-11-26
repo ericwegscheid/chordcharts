@@ -1,0 +1,22 @@
+@media print {
+  body > .wrapper {
+    background-color: white;
+  }
+
+  body > .wrapper > .menu,
+  body > .wrapper > .header {
+    display: none;
+  }
+
+  body > .wrapper > .title {
+    top: 0;
+    left: 0;
+  }
+
+  body > .wrapper > .chart {
+    overflow: visible;
+    top: 50px;
+    left: 0;
+  }
+
+}
