@@ -12,6 +12,7 @@ window._data = {
     "./charts/secular/WhereHaveAllTheCowboysGone.ccl",
     "./charts/worship/10000Reasons.ccl",
     "./charts/worship/ABeautifulExchange.ccl",
+    "./charts/worship/Abide.ccl",
     "./charts/worship/AfterAll.ccl",
     "./charts/worship/Alive.ccl",
     "./charts/worship/AllBecauseOfJesus.ccl",
