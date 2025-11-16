@@ -140,7 +140,7 @@
       var dark = typeof force !== 'boolean'
             ? !document.body.classList.contains('dark')
             : force,
-        theme = dark ? 'LIGHT' : 'DARK';
+        theme = dark ? 'light mode' : 'dark mode';
       document.body.classList.toggle('dark', dark);
       __.select('span.theme button').innerHTML = theme;
       // save theme
@@ -155,7 +155,7 @@
       _app.saveData('selectedChart');
       _render.chart(_data.selectedChart, true);
       document.body.classList.toggle('lyrics-only', hideChords);
-      __.select('span.lyrics button').innerHTML = hideChords ? 'CHORDS' : 'LYRICS';
+      __.select('span.lyrics button').innerHTML = hideChords ? ' w/chords ' : ' just lyrics ';
     },
     columns: function(force) {
       var chart = __.select('.chart'),

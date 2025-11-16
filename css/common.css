@@ -80,7 +80,6 @@ body.hide-controls .header .toggle-controls {
   position: absolute;
   top: 0;
   left: 0;
-  overflow-x: visible;
   overflow-y: visible;
   white-space: nowrap;
   user-select: none;
@@ -120,6 +119,10 @@ button {
 button.columns,
 button.float-lines {
   width: 40px;
+}
+
+button.icon {
+  font-size: xx-large;
 }
 
 .share > button,
