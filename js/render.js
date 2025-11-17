@@ -41,15 +41,10 @@
         })
         .join('');
     },
-    menu: function() {
-      var charts = !_data.filter
-        ? _data.charts
-        : _data.charts.filter(function(chart) {
-            return !!~chart.title.toLowerCase().indexOf(_data.filter.toLowerCase());
-          });
-
-      __.select('.menu > ul.list').innerHTML =
-        charts
+    listItems: function(items, category) {
+      return [
+        '<li class="category">', __.capitalize(category), '</li>',
+        ...items
           .filter(function(chart) {
             return !~_data.queue.indexOf(chart.index);
           })
@@ -60,7 +55,39 @@
               '<div onclick="_action.addToQueue(' + chart.index + ')">+</div>' +
               '</li>';
           })
-          .join('');
+      ].join('');
+    },
+    menu: function() {
+      var charts = !_data.filter
+        ? _data.charts
+        : _data.charts.filter(function(chart) {
+            return !!~chart.title.toLowerCase().indexOf(_data.filter.toLowerCase());
+          });
+      var byCategory = {};
+      for (const chart of charts) {
+        byCategory[chart.category] = byCategory[chart.category] || [];
+        byCategory[chart.category].push(chart);
+      }
+      var listItems = []
+      for (const [category, items] of Object.entries(byCategory)) {
+        listItems.push(_render.listItems(items, category));
+      }
+      __.select('.menu > ul.list').innerHTML = listItems.join('');
+
+
+      // __.select('.menu > ul.list').innerHTML =
+        // charts
+          // .filter(function(chart) {
+            // return !~_data.queue.indexOf(chart.index);
+          // })
+          // .map(function(chart) {
+            // return '<li onclick="_action.selectChart(' + chart.index + ')" ' +
+              // 'id="chart-' + chart.id + '">' +
+              // chart.title +
+              // '<div onclick="_action.addToQueue(' + chart.index + ')">+</div>' +
+              // '</li>';
+          // })
+          // .join('');
       _action.selectChart((_data.selectedChart || {}).index);
       var listEl = __.select('.menu > ul.list');
       listEl.style.height = `calc(100% - ${listEl.getBoundingClientRect().top}px)`;
@@ -91,7 +118,7 @@
 
       if( chart ) {
         _action.zoom();
-        _action.columns(chart.data.length > 1 ? chart.columns : false);
+        _action.columns(chart.data?.length > 1 ? chart.columns : false);
         _action.floatLines(chart.floatLines);
 
         // super hacky but it gets the job done

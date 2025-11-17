@@ -10,9 +10,12 @@
             .replace(/([0-9]+)/g, ' $1')
             .trim();
           var id = title.replace(/\s/g, '-').toLowerCase();
-          var src = chart.split('/').slice(1).join('/');
+          var srcSplit = chart.split('/');
+          var src = srcSplit.slice(1).join('/');
+          var category = srcSplit[2];
 
           return {
+            category: category,
             columns: true,
             filter: '',
             floatLines: false,
@@ -60,8 +63,7 @@
         });
     },
     _setChartData: function(chart) {
-      return chart.text
-        .split(/\n\n\-\-\-\n\n/)
+      return chart.text?.split(/\n\n\-\-\-\n\n/)
         .map(function(column) {
           return column
             .split(/\n\n/)
@@ -78,7 +80,7 @@
         });
     },
     chart: function(chart) {
-      chart.text = chart.text.replace(/(<([^>]+)>)/gi, '');
+      chart.text = chart.text?.replace(/(<([^>]+)>)/gi, '');
       chart.data = _proc._setChartData(chart);
 
       return chart;

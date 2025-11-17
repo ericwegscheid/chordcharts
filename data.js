@@ -90,7 +90,6 @@ window._data = {
     "./charts/worship/InThePresenceOfAngels.ccl",
     "./charts/worship/ItIsWell.ccl",
     "./charts/worship/ItIsWellThroughItAll.ccl",
-    "./charts/worship/JesusDoes.ccl",
     "./charts/worship/JesusLovesMe.ccl",
     "./charts/worship/JesusPaidItAll.ccl",
     "./charts/worship/JoyToTheWorld.ccl",
@@ -166,7 +165,6 @@ window._data = {
     "./charts/worship/WhatABeautifulName.ccl",
     "./charts/worship/WhatChildIsThis.ccl",
     "./charts/worship/WhenTheStarsBurnDown.ccl",
-    "./charts/worship/WhereverYouGo.ccl",
     "./charts/worship/WhoYouSayIAm.ccl",
     "./charts/worship/WithEverything.ccl",
     "./charts/worship/WordOfLife.ccl",
@@ -174,6 +172,5 @@ window._data = {
     "./charts/worship/YouMakeMeBrave.ccl",
     "./charts/worship/YourGraceIsEnough.ccl",
     "./charts/worship/YourGreatName.ccl",
-    "./charts/worship/YourName.ccl",
   ],
 };

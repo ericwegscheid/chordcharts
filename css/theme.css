@@ -72,6 +72,9 @@ button {
 .menu ul li:not(.active):hover {
   background-color: var(--bg-3);
 }
+.menu ul li.category {
+  background-color: var(--bg-4);
+}
 
 /** chart **/
 .chart ul li:first-child {
