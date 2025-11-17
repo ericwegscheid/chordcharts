@@ -74,6 +74,9 @@
       _render.queue();
       _render.menu();
     },
+    openNotes: function() {
+      location.pathname = '/notes';
+    },
     showChart: function(chart) {
       _proc.chart(chart);
       _render.chart(chart);
@@ -140,7 +143,7 @@
       var dark = typeof force !== 'boolean'
             ? !document.body.classList.contains('dark')
             : force,
-        theme = dark ? 'light mode' : 'dark mode';
+        theme = dark ? 'Light Mode' : 'Dark Mode';
       document.body.classList.toggle('dark', dark);
       __.select('span.theme button').innerHTML = theme;
       // save theme
@@ -155,7 +158,7 @@
       _app.saveData('selectedChart');
       _render.chart(_data.selectedChart, true);
       document.body.classList.toggle('lyrics-only', hideChords);
-      __.select('span.lyrics button').innerHTML = hideChords ? ' w/chords ' : ' just lyrics ';
+      __.select('span.lyrics button').innerHTML = hideChords ? 'Show Chords' : 'Just Lyrics';
     },
     columns: function(force) {
       var chart = __.select('.chart'),

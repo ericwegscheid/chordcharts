@@ -46,6 +46,10 @@ button {
   font-weight: 500;
 }
 
+.header > span.control-group {
+  background-color: var(--bg-5);
+}
+
 /** menu **/
 .menu .search {
   background-color: var(--bg-3);
