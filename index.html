@@ -20,14 +20,6 @@
       <ul class="list scroll"></ul>
     </div>
     <div class="header scroll">
-      <!-- FOR DEBUGGING
-      <span class="refresh">
-        <button onclick="_action.refresh()">REFRESH</button>
-      </span>
-      -->
-      <span class="clear">
-        <button onclick="_action.clear()">CLEAR</button>
-      </span>
       <button class="collapse icon" onclick="_action.collapse()">&lsaquo;</button>
       <span class="queue-controls">
         <button class="prev icon" onclick="_action.queueNav(-1)">&laquo;</button>
@@ -38,17 +30,17 @@
         <button class="icon" onclick="_action.transpose(-1)">-</button>
         <button class="icon" onclick="_action.transpose(1)">+</button>
       </span>
+      <!--
       <span class="notes">
         <button onclick="_action.openNotes()">Open Notes</button>
       </span>
+      -->
       <span class="lyrics">
         <button onclick="_action.hideChords()">Just Lyrics</button>
       </span>
-      <!--
       <span class="share">
-        <button onclick="_action.share()">share</button>
+        <button onclick="_action.share()">Share</button>
       </span>
-      -->
       <span class="theme">
         <button onclick="_action.theme()">Dark Mode</button>
       </span>
@@ -79,6 +71,14 @@
         <label>Gap</label>
         <button class="icon" onclick="_action.gap(-10)">-</button>
         <button class="icon" onclick="_action.gap(10)">+</button>
+      </span>
+      <!-- FOR DEBUGGING
+      <span class="refresh">
+        <button onclick="_action.refresh()">REFRESH</button>
+      </span>
+      -->
+      <span class="clear">
+        <button onclick="_action.clear()">CLEAR</button>
       </span>
     </div>
     <h2 class="title"></h2>

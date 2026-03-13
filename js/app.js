@@ -93,11 +93,11 @@
   var queryParams = __.getQueryParams();
 
   if (queryParams.song) {
-    for (var chart of _data.charts) {
-      if (chart.id === queryParams.song) {
-        _action.selectChart(chart.index);
-        _action.toggleControls();
-      }
+    var chart = _app.getChartById(queryParams.song);
+    console.log(chart);
+    if (chart) {
+      _action.selectChart(chart.index);
+      _action.toggleControls();
     }
   }
 
