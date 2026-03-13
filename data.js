@@ -91,6 +91,7 @@ window._data = {
     "./charts/worship/ItIsWell.ccl",
     "./charts/worship/ItIsWellThroughItAll.ccl",
     "./charts/worship/JesusLovesMe.ccl",
+    "./charts/worship/JesusNameAboveAllNames.ccl",
     "./charts/worship/JesusPaidItAll.ccl",
     "./charts/worship/JoyToTheWorld.ccl",
     "./charts/worship/KingOfAllDays.ccl",
