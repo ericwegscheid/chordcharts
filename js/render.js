@@ -4,16 +4,14 @@
     app: function() {
       _render.menu();
       _render.queue();
-
       // ensure we re-apply the theme
       _action.theme(!!_app.fetchData('useDarkTheme'));
     },
     queue: function() {
       var queueList = __.select('.menu > ul.queue'),
           hasQueue = _data.queue.length && __.isNum(_data.queue[0]);
-
       // TODO this is just a patch, find out what is causing _data.queue to be [null]
-      if( !hasQueue ) {
+      if (!hasQueue) {
         _data.queue = [];
       }
 
@@ -26,7 +24,7 @@
           var chart = _data.charts[chartIndex],
               isSelected = chart.id === (_data.selectedChart || {}).id;
 
-          if( isSelected ) {
+          if (isSelected) {
             __.select('.menu ul li', true).forEach(function(li) {
               li.classList.remove('active');
             });
@@ -104,6 +102,7 @@
           ? '<div class="empty-chart">select chart from left menu</div>'
           : chart.data.map(function(column) {
             return '<div class="column">' +
+            // return '' +
               column.map(function(section) {
                 return '<ul>' +
                   section.map(function(line) {
@@ -114,15 +113,14 @@
                   '</ul>';
               }).join('') +
               '</div>';
+              // '';
             }).join('');
-
-      if( chart ) {
+      if (chart) {
         _action.zoom();
-        _action.columns(chart.data?.length > 1 ? chart.columns : false);
-        _action.floatLines(chart.floatLines);
-
+        // _action.columns(chart.data?.length > 1 ? chart.columns : false);
+        // _action.floatLines(chart.floatLines);
         // super hacky but it gets the job done
-        if( !fromHideChords ) {
+        if (!fromHideChords) {
           _action.hideChords(chart.hideChords);
         }
       }

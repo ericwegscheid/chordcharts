@@ -1,13 +1,13 @@
 @media print {
-    @page {
-        margin-left:  0.8in;
-        margin-right:  0.8in;
-        margin-top:  0;
-        margin-bottom:  0;
-    }
-    .no-print {
-        display: none;
-    }
+  @page {
+    margin-left:  0.8in;
+    margin-right:  0.8in;
+    margin-top:  0;
+    margin-bottom:  0;
+  }
+  .no-print {
+    display: none;
+  }
 }
 
 html,
@@ -29,13 +29,15 @@ body > .wrapper {
 }
 
 body.full .chart {
+  /** /
   width: 100%;
+  /**/
   left: 0;
 }
 
 body.full .header,
 body.full .title {
-  width: calc(100% - 20px);
+  width: calc(100% - 10px);
 }
 
 body.full .menu {
@@ -267,8 +269,8 @@ label {
   top: 62px;
   right: 0;
   height: 32px;
-  margin: 10px 10px 0;
-  width: calc(100% - 420px);
+  margin: 10px 0 0;
+  width: calc(100% - 410px);
   text-wrap: nowrap;
 }
 
@@ -277,7 +279,12 @@ label {
   top: 100px;
   left: 400px;
   height: calc(100% - 100px);
+  /** /
   width: calc(100% - 400px);
+  /**/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .chart .empty-chart {
@@ -291,10 +298,11 @@ label {
 
 .column {
   margin: 0;
-  padding: 0 30px 40px 10px;
+  padding: 0 20px 20px 10px;
   float: left;
 }
 
+/** /
 .chart.no-columns .column {
   width: calc(100% - 30px);
   padding: 0 10px;
@@ -310,19 +318,26 @@ label {
   margin: 0 0 20px;
   padding: 0 10px 40px;
 }
+/**/
 
 .chart ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  /** /
   height: 100%;
+  /**/
   overflow: visible;
+  display: flex;
+  flex-direction: column;
 }
 
 .chart ul li.empty {
   margin: 0;
   height: 0;
+  /** /
   width: 100%;
+  /**/
 }
 
 .chart ul li {

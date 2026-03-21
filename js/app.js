@@ -17,48 +17,41 @@
     },
     getChartById: function(id) {
       var i, len, chart;
-
-      if( !id ) {
+      if (!id) {
         return;
       }
-
       spl = id.split(':');
       id = spl[0];
       trans = Number(spl[1]);
-
-      for( i = 0, len = _data.charts.length; i < len; i++ ) {
+      for (i = 0, len = _data.charts.length; i < len; i++) {
         chart = _data.charts[i];
-
-        if( chart.id === id ) {
-          if( Number.isInteger(trans) ) {
+        if (chart.id === id) {
+          if (Number.isInteger(trans)) {
             chart.transposition = trans;
-
-            if( (_data.selectedChart || {}).id === id ) {
+            if ((_data.selectedChart || {}).id === id) {
               _data.selectedChart.transposition = trans;
             }
           }
-
           return chart;
         }
       }
     },
     keydown: function(e) {
       // left, up
-      if( [37, 38].includes(e.keyCode) ) {
-          _action.queueNav(-1);
-
-      // right, down
-      } else if( [39, 40].includes(e.keyCode) ) {
-          _action.queueNav(1);
+      if ([37, 38].includes(e.keyCode)) {
+        _action.queueNav(-1);
+        // right, down
+      } else if ([39, 40].includes(e.keyCode)) {
+        _action.queueNav(1);
       }
     },
     init: function() {
       _data.selectedChart = _app.fetchData('selectedChart');
-//       _data.charts = _app.fetchData('charts') || _proc.charts(_data.charts);
+      //       _data.charts = _app.fetchData('charts') || _proc.charts(_data.charts);
       _data.charts = _proc.charts(_data.charts);
       _data.queue = _app.fetchData('queue') || [];
       _data.queueIndex = _app.fetchData('queueIndex') || -1;
-//       _app.saveData('charts');
+      //       _app.saveData('charts');
 
       var queue = ((__.getQueryParams()['queue'] || '')
         .split(',')
@@ -69,7 +62,7 @@
           return __.isNum(v);
         });
 
-      if( queue.length && __.isNum(queue[0]) ) {
+      if (queue.length && __.isNum(queue[0])) {
         _data.queue = queue;
         _app.saveData('queue');
       }
@@ -81,7 +74,7 @@
       __.select('.search').onclick = _action.clearFilter;
 
       document.addEventListener('click', e => {
-        if( e.target && e.target.getAttribute('data-event') === 'select-chart' ) {
+        if (e.target && e.target.getAttribute('data-event') === 'select-chart') {
           _action.selectChartFromQueue(__.getElementIndex(e.target));
         }
       });

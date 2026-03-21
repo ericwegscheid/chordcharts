@@ -63,7 +63,7 @@
         });
     },
     _setChartData: function(chart) {
-      return chart.text?.split(/\n\n\-\-\-\n\n/)
+      return chart.text?.split(/\n\n/)
         .map(function(column) {
           return column
             .split(/\n\n/)

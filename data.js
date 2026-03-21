@@ -7,6 +7,7 @@ window._data = {
     "./charts/secular/Clearly.ccl",
     "./charts/secular/DustInTheWind.ccl",
     "./charts/secular/EnjoyTheSilence.ccl",
+    "./charts/secular/IGetToLoveYou.ccl",
     "./charts/secular/Rain.ccl",
     "./charts/secular/TheSoundOfSilence.ccl",
     "./charts/secular/WhereHaveAllTheCowboysGone.ccl",

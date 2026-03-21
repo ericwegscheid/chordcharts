@@ -160,26 +160,26 @@
       document.body.classList.toggle('lyrics-only', hideChords);
       __.select('span.lyrics button').innerHTML = hideChords ? 'Show Chords' : 'Just Lyrics';
     },
-    columns: function(force) {
-      var chart = __.select('.chart'),
-        columns = typeof force !== 'boolean'
-          ? chart.classList.contains('no-columns')
-          : force;
-      _data.selectedChart.columns = columns;
-      _app.saveData('selectedChart');
-      chart.classList.toggle('no-columns', !columns);
-      __.select('button.columns').innerHTML = columns ? 'ON' : 'OFF';
-    },
-    floatLines: function(force) {
-      var chart = __.select('.chart'),
-          floatLines = typeof force !== 'boolean'
-            ? !chart.classList.contains('float-lines')
-            : force;
-      _data.selectedChart.floatLines = floatLines;
-      _app.saveData('selectedChart');
-      chart.classList.toggle('float-lines', floatLines);
-      __.select('button.float-lines').innerHTML = floatLines ? 'ON' : 'OFF';
-    },
+    // columns: function(force) {
+      // var chart = __.select('.chart'),
+        // columns = typeof force !== 'boolean'
+          // ? chart.classList.contains('no-columns')
+          // : force;
+      // _data.selectedChart.columns = columns;
+      // _app.saveData('selectedChart');
+      // chart.classList.toggle('no-columns', !columns);
+      // __.select('button.columns').innerHTML = columns ? 'ON' : 'OFF';
+    // },
+    // floatLines: function(force) {
+      // var chart = __.select('.chart'),
+          // floatLines = typeof force !== 'boolean'
+            // ? !chart.classList.contains('float-lines')
+            // : force;
+      // _data.selectedChart.floatLines = floatLines;
+      // _app.saveData('selectedChart');
+      // chart.classList.toggle('float-lines', floatLines);
+      // __.select('button.float-lines').innerHTML = floatLines ? 'ON' : 'OFF';
+    // },
     gap: function(direction) {
       _data.gap += direction || 0;
       _app.saveData('gap');
