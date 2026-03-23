@@ -15,18 +15,29 @@
       }
     },
     share: function() {
-      var str = [
-        location.origin,
-        location.pathname,
-        '?queue=',
-        _data.queue.map(function(chartIndex) {
-          var chart = _data.charts[chartIndex];
-          return [
-            chart.id,
-            chart.transposition ? ':' + chart.transposition : ''
-          ].join('');
-        }).join(',')
-      ].join('');
+      let str = '';
+      if (_data.queue.length) {
+        str = [
+          location.origin,
+          location.pathname,
+          '?queue=',
+          _data.queue.map(function(chartIndex) {
+            var chart = _data.charts[chartIndex];
+            return [
+              chart.id,
+              chart.transposition ? ':' + chart.transposition : ''
+            ].join('');
+          }).join(',')
+        ].join('');
+      } else {
+        str = [
+          location.origin,
+          location.pathname,
+          '?song=',
+          _data.selectedChart.id,
+          _data.selectedChart.transposition ? ':' + _data.selectedChart.transposition : ''
+        ].join('');
+      }
       __.copy(str);
       alert('Copied to clipboard: ' + str);
     },
@@ -183,7 +194,7 @@
     gap: function(direction) {
       _data.gap += direction || 0;
       _app.saveData('gap');
-      __.select('.column:not(:first-child)', true).forEach((el) => {
+      __.select('.column', true).forEach((el) => {
         el.style.marginLeft = _data.gap + 'px';
       });
     },

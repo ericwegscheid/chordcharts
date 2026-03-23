@@ -39,7 +39,7 @@
     keydown: function(e) {
       // left, up
       if ([37, 38].includes(e.keyCode)) {
-        _action.queueNav(-1);
+        // _action.queueNav(-1);
         // right, down
       } else if ([39, 40].includes(e.keyCode)) {
         _action.queueNav(1);
