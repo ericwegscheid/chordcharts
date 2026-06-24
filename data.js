@@ -68,6 +68,7 @@ window._data = {
     "./charts/worship/GodOfWonders.ccl",
     "./charts/worship/GodYouReign.ccl",
     "./charts/worship/GoodGoodFather.ccl",
+    "./charts/worship/GoodnessOfGod.ccl",
     "./charts/worship/GraceLikeRain.ccl",
     "./charts/worship/Gratitude.ccl",
     "./charts/worship/GravesIntoGardens.ccl",
