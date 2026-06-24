@@ -41,6 +41,7 @@ window._data = {
     "./charts/worship/BreakEveryChain.ccl",
     "./charts/worship/BrokenVessels.ccl",
     "./charts/worship/BuildYourKingdomHere.ccl",
+    "./charts/worship/BuildMyLife.ccl",
     "./charts/worship/CameToMyRescue.ccl",
     "./charts/worship/ChristArose.ccl",
     "./charts/worship/ChristBeMagnified.ccl",
