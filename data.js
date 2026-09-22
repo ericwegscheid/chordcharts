@@ -78,6 +78,7 @@ window._data = {
     "./charts/worship/Greater.ccl",
     "./charts/worship/HappyDay.ccl",
     "./charts/worship/HeReigns.ccl",
+    "./charts/worship/HeIsGood.ccl",
     "./charts/worship/HereIAmToWorship.ccl",
     "./charts/worship/HereInYourPresence.ccl",
     "./charts/worship/HeresMyHeartLord.ccl",
