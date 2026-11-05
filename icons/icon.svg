@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Chordcharts">
+  <rect width="512" height="512" rx="110" fill="#0b49df"/>
+  <g fill="#ffffff">
+    <ellipse cx="208" cy="372" rx="62" ry="43" transform="rotate(-20 208 372)"/>
+    <rect x="250" y="128" width="24" height="254"/>
+    <path d="M274 128 C365 150 395 225 330 292 C350 210 318 170 274 172 Z"/>
+  </g>
+</svg>
