@@ -166,5 +166,6 @@ these are likely what will be the next topics of work for this project:
 - [ ]: Websites navigation and page layouts implemented
   - [ ]: Navigation - have to determine where this
   - [ ]: Optimize UI rendering for mobile
+  - [ ]: ...
 
 
